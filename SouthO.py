@@ -26,16 +26,16 @@ def initdb_command():
 	db.create_all()
 
 	paths = {
-		"filetofish.jpg": ["Yes, a filet-o-fish", "Image description here"],
-		"insomnia.jpg": ["Sugar We Are Going Down Swinging", "Image description here"], 
-		"jesusisking.jpg": ["Jesus is King", "Image description here"], 
-		"lite.jpg": ["Mr. Miller", "Image description here"],
-		"miley.jpg": ["Literally No One:", "Image description here"], 
-		"pennstate.jpg": ["How Tough Are You?", "Image description here"],
-		"pizza.jpg": ["A Big Waste of Money", "Image description here"],
-		"pizza2.jpg": ["Where's the Ranch?", "Image description here"], 
-		"pumpkin.jpg": ["Smashing Pumkpins", "Image description here"], 
-		"rat.jpg": ["Oh Rats", "Image description here"],
+		"filetofish.JPG": ["Yes, a filet-o-fish", "Image description here"],
+		"insomnia.JPG": ["Sugar We Are Going Down Swinging", "Image description here"], 
+		"jesusisking.JPG": ["Jesus is King", "Image description here"], 
+		"lite.JPG": ["Mr. Miller", "Image description here"],
+		"miley.JPG": ["Literally No One:", "Image description here"], 
+		"pennstate.JPG": ["How Tough Are You?", "Image description here"],
+		"pizza.JPG": ["A Big Waste of Money", "Image description here"],
+		"pizza2.JPG": ["Where's the Ranch?", "Image description here"], 
+		"pumpkin.JPG": ["Smashing Pumkpins", "Image description here"], 
+		"rat.JPG": ["Oh Rats", "Image description here"],
 	}
 
 	for path in paths:
