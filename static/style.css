@@ -1,17 +1,17 @@
-*{
-  	margin: 0;
-	padding: 0;
-	outline: none;
-	border: none;
-	-webkit-box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
 
+
 body{
+  background: url('background.jpg') no-repeat center center fixed; 
+  background-size: cover;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.6em;
 	margin: 0;
 	text-align: center;
+  padding-bottom: 100px;
 }
 
 .page_header {
@@ -113,8 +113,15 @@ body{
 }
 
 #carousel_images {
-	padding-top:100px;
+	padding-top:50px;
 	margin: 0 auto;
 	height: 500px;
 	width: 500px;
+}
+
+#home_desc, .descriptions {
+  word-wrap: break-word;
+  width: 70%;
+  margin: 0 auto;
+  padding: 25px;
 }

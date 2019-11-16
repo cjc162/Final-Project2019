@@ -1,4 +1,7 @@
 {% extends "layout.html" %}
+{% block title %}{{ image.name }}{% endblock %}
 {% block body %}
-	{{ image.description }}
+	<h2 class="page_header">{{ image.name }}</h2>
+	<p class="descriptions">{{ image.description }}</p>
+	<img src="/static/{{image.path}}" height="500px" width="500px">
 {% endblock %}

@@ -26,20 +26,20 @@ def initdb_command():
 	db.create_all()
 
 	paths = {
-		"filetofish.JPG": ["Yes, a filet-o-fish", "Image description here"],
-		"insomnia.JPG": ["Sugar We Are Going Down Swinging", "Image description here"], 
-		"jesusisking.JPG": ["Jesus is King", "Image description here"], 
-		"lite.JPG": ["Mr. Miller", "Image description here"],
-		"miley.JPG": ["Literally No One:", "Image description here"], 
-		"pennstate.JPG": ["How Tough Are You?", "Image description here"],
-		"pizza.JPG": ["A Big Waste of Money", "Image description here"],
-		"pizza2.JPG": ["Where's the Ranch?", "Image description here"], 
-		"pumpkin.JPG": ["Smashing Pumkpins", "Image description here"], 
-		"rat.JPG": ["Oh Rats", "Image description here"],
+		"filetofish.JPG": ["Yes, a filet-o-fish", "food", "Image description here"],
+		"insomnia.JPG": ["Sugar We Are Going Down Swinging", "food", "Image description here"], 
+		"jesusisking.JPG": ["Jesus is King", "misc", "Image description here"], 
+		"lite.JPG": ["Mr. Miller", "alcohol", "Image description here"],
+		"miley.JPG": ["Literally No One:", "misc", "Image description here"], 
+		"pennstate.JPG": ["How Tough Are You?", "misc", "Image description here"],
+		"pizza.JPG": ["A Big Waste of Money", "food", "Image description here"],
+		"pizza2.JPG": ["Where's the Ranch?", "food", "Image description here"], 
+		"pumpkin.JPG": ["Smashing Pumkpins", "misc", "Image description here"], 
+		"rat.JPG": ["Oh Rats", "animals", "Image description here"],
 	}
 
 	for path in paths:
-		db.session.add(Images(path, paths[path][0], paths[path][1]))
+		db.session.add(Images(path, paths[path][0], paths[path][1], paths[path][2]))
 		db.session.commit()
 
 	print('Initialized the database.')
@@ -61,9 +61,17 @@ def index():
 
 	return render_template('index.html', images=image_data)
 
-@app.route('/gallery')
+@app.route('/gallery', methods=['GET', 'POST'])
 def gallery():
-	images = Images.query.all()
+	error = None
+
+	if request.method == 'POST':
+		if (request.form['filter'] == "all"):
+			images = Images.query.all()
+		else:
+			images = Images.query.filter_by(category=request.form['filter']).all()
+	else:
+		images = Images.query.all()
 
 	image_data = []
 	for image in images:
