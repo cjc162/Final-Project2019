@@ -12,9 +12,9 @@ function createCarousel() {
 	var i;
 	for (i = 0; i < images.value.length; i++) {
 		if (i == 0) {
-			$('.carousel-inner').append('<div class="carousel-item active"><img class="d-block w-100" src="/static/' + images.value[i].path + '" height="400px" width="100%"></div>');
+			$('.carousel-inner').append('<div class="carousel-item active"><img class="d-block w-100" src="/static/images/' + images.value[i].path + '" height="400px" width="100%"></div>');
 		} else {
-			$('.carousel-inner').append('<div class="carousel-item"><img class="d-block w-100" src="/static/' + images.value[i].path + '" height="400px" width="100%"></div>');
+			$('.carousel-inner').append('<div class="carousel-item"><img class="d-block w-100" src="/static/images/' + images.value[i].path + '" height="400px" width="100%"></div>');
 		}
 	}
 
