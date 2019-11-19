@@ -13,8 +13,8 @@ app = Flask(__name__)
 
 SECRET_KEY = 'development key'
 
-#SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(app.root_path, 'SouthO.db')
-SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(app.root_path, 'SouthO.db')
+#SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 app.config.from_object(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -25,21 +25,15 @@ db.init_app(app)
 def initdb_command():
 	db.create_all()
 
-	paths = {
-		"filetofish.JPG": ["Yes, a filet-o-fish", "food", "Image description here"],
-		"insomnia.JPG": ["Sugar We Are Going Down Swinging", "food", "Image description here"], 
-		"jesusisking.JPG": ["Jesus is King", "misc", "Image description here"], 
-		"lite.JPG": ["Mr. Miller", "alcohol", "Image description here"],
-		"miley.JPG": ["Literally No One:", "misc", "Image description here"], 
-		"pennstate.JPG": ["How Tough Are You?", "misc", "Image description here"],
-		"pizza.JPG": ["A Big Waste of Money", "food", "Image description here"],
-		"pizza2.JPG": ["Where's the Ranch?", "food", "Image description here"], 
-		"pumpkin.JPG": ["Smashing Pumkpins", "misc", "Image description here"], 
-		"rat.JPG": ["Oh Rats", "animals", "Image description here"],
-	}
+	f = open("static/images.txt", "r")
 
-	for path in paths:
-		db.session.add(Images(path, paths[path][0], paths[path][1], paths[path][2]))
+	for line in f:
+		images = [x.strip() for x in line.split(',')]
+
+		if (len(images) != 4):
+			continue
+
+		db.session.add(Images(images[0], images[1], images[2], images[3]))
 		db.session.commit()
 
 	print('Initialized the database.')
