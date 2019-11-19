@@ -64,3 +64,6 @@ _You may not be able to pin down dates until you get into the mix and see what's
 
 ## The rest
 Feel free to add any further thoughts, plans, or possibilities... or to answer additional questions from the Group Contract on page 116 of Writer/Designer.
+
+Google Doc: Google Doc: https://docs.google.com/document/d/19HajGKj0dPLpSNGdT2r9TG3T0oUwYRcskIEVy3aWHyU/edit?usp=sharing
+
