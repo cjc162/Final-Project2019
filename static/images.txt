@@ -12,6 +12,7 @@
 "PizzaLeftovers.JPG","name","type","description"
 "RedSoloCup.JPG","name","type","description"
 "Smallboibbqsauce.JPG","name","type","description"
+"SteelersBudLight.JPG","name","type","description"
 "SwellWaterBottle.JPG","name","type","description"
 "TomatoSauceBottle.JPG","name","type","description"
 "Truly.JPG","name","type","description"
