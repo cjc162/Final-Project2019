@@ -4,14 +4,25 @@
 
 
 body{
-  background: url('background.jpg') no-repeat center center fixed; 
-  background-size: cover;
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 1.6em;
 	margin: 0;
 	text-align: center;
   padding-bottom: 100px;
+}
+
+body::after {
+  content: "";
+  background: url('background.jpg') no-repeat center center fixed; 
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
+  z-index: -1;
 }
 
 .page_header {
@@ -117,7 +128,6 @@ body{
 }
 
 #carousel_images {
-	padding-top:50px;
 	margin: 0 auto;
 	height: 500px;
 	width: 500px;
@@ -125,7 +135,7 @@ body{
 
 #home_desc, .descriptions {
   word-wrap: break-word;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
-  padding: 25px;
+  padding: 20px;
 }

@@ -25,7 +25,7 @@ db.init_app(app)
 def initdb_command():
 	db.create_all()
 
-	f = open("static/images.txt", "r")
+	f = open("static/images.csv", "r")
 
 	for line in f:
 		images = [x.strip() for x in line.split(',')]
